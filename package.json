@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "webpack --watch",
-    "start": "webpack && workbox generateSW workbox-config.js  && webpack serve --open ",
-    "build": "webpack && workbox generateSW workbox-config.js",
+    "start": "webpack && workbox injectManifest workbox-config.js  && webpack serve --open ",
+    "build": "webpack && workbox injectManifest workbox-config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,10 +33,21 @@
     "tailwindcss": "^3.4.3",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^5.0.4",
+    "workbox-background-sync": "7.1.0",
+    "workbox-broadcast-update": "7.1.0",
+    "workbox-cacheable-response": "7.1.0",
+    "workbox-core": "7.1.0",
+    "workbox-expiration": "7.1.0",
+    "workbox-navigation-preload": "7.1.0",
+    "workbox-precaching": "7.1.0",
+    "workbox-routing": "7.1.0",
+    "workbox-strategies": "7.1.0",
+    "workbox-window": "7.1.0"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.24.1",
-    "workbox-window": "^7.1.0"
+    "workbox-window": "^7.1.0",
+    "workbox-build": "7.1.0"
   }
 }

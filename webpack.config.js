@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   //   watch: true,
-  entry: "./src/index.ts",
+  entry: ["./src/index.ts", "./src/sw.ts"],
   output: {
-    filename: (chunkData) => {
-      return chunkData.chunk.name === "loader"
-        ? "[name].js"
-        : "[name].[chunkhash:8].js";
-    },
+    // filename: (chunkData) => {
+    //   return chunkData.chunk.name === "loader"
+    //     ? "[name].js"
+    //     : "[name].[chunkhash:8].js";
+    // },
     path: path.resolve(__dirname, "dist"),
   },
   mode: "development",
@@ -42,6 +42,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'product.html',
+      template: "./src/product.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'offline.html',
+      template: "./src/offline.html",
     }),
   ],
 };
